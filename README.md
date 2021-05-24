@@ -44,14 +44,20 @@ Now Go And Run The install.bat Folder
 After That Run The run.bat Folder
 
 ### Welcome👋
+First Put These Two One
+<img src="https://cdn.discordapp.com/attachments/843871271133642752/846303351863640064/unknown.png" alt="welcome"/>
+
 set-welcome #channel
+
 remove-welcome
 
 ### Autorole 🥪
 set-autorole
+
 remove-autorole
 
 ### Support 🧰
 
 [Discord Server](https://discord.gg/pRQ77qB2bB)
+
 My Discord : TFC Mahmoud#4606
