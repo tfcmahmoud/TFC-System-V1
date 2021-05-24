@@ -1,0 +1,12 @@
+{
+  "token": "bot token",
+  "prefix": "main prefix",
+  "dev": [
+    "dev id",
+    "dev id",
+    "dev id",
+    "dev id"
+  ],
+  "status": "the status of the bot",
+  "rewards": ["reward", "reward", "reward", "reward", "reward", "nitro"]
+}
