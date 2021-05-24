@@ -55,4 +55,3 @@ remove-autorole
 
 [Discord Server](https://discord.gg/pRQ77qB2bB)
 My Discord : TFC Mahmoud#4606
-<img src="https://cdn.discordapp.com/icons/843865725886398554/780ca4b5fc45ba32388ceb02f3cd6141.png?size=1024" alt="ottawa"/>
