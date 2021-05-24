@@ -357,8 +357,8 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-    if (!args) return
     if (command === 'gcreate') {
+      if (!args) return
       if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
         // gcreate 10m 1 prize
         // will create a giveaway with a duration of two days, with one winner and the prize will be "Awesome prize!"
@@ -381,9 +381,9 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-    if (!args) return
  
     if (command === 'greroll') {
+        if (!args) return
         let messageID = args[0];
         client.giveawaysManager.reroll(messageID).then(() => {
             message.channel.send('Success! Giveaway rerolled!');
@@ -398,9 +398,9 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     const command = args.shift().toLowerCase();
-    if (!args) return
  
     if (command === 'gedit') {
+        if (!args) return
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
         let messageID = args[0];
         client.giveawaysManager.edit(messageID, {
@@ -421,9 +421,9 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     const command = args.shift().toLowerCase();
-    if (!args) return
  
     if (command === 'gdelete') {
+        if (!args) return
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
         let messageID = args[0];
         client.giveawaysManager.delete(messageID).then(() => {
