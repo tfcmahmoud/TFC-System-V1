@@ -357,7 +357,7 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
- 
+    if (!args) return
     if (command === 'gcreate') {
       if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
         // gcreate 10m 1 prize
@@ -381,6 +381,7 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
+    if (!args) return
  
     if (command === 'greroll') {
         let messageID = args[0];
@@ -397,6 +398,7 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     const command = args.shift().toLowerCase();
+    if (!args) return
  
     if (command === 'gedit') {
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
@@ -419,6 +421,7 @@ client.on('message', (message) => {
     if (prf === null) return prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     const command = args.shift().toLowerCase();
+    if (!args) return
  
     if (command === 'gdelete') {
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
