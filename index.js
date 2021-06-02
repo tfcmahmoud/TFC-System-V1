@@ -1103,7 +1103,7 @@ client.on('message', message => {
               db.add(`money_${member.id}`, args)
               db.subtract(`money_${message.author.id}`, args)
               console.log(chalk.green(`${message.author.tag} Just Transfered ${args} To ${member.user.tag}`))
-              message.channel.send(`**✅ | You Have Transfered ${args} To ${member}**`)
+              message.channel.send(`**:moneybag: | ${message.author.username}, has transferred \`$${args}\` to ${member}**`)
             } else if(c.first.content !== number) {//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
               m.delete();
               console.log(chalk.red(`${message.author.tag} Just Typed The Numbers Wrong`))
