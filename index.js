@@ -85,7 +85,7 @@ client.on('message', message => {
 
 client.on('message', tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prefix + "mute")){
     if (!tfcm.guild) return
     var user = tfcm.mentions.members.first();
@@ -103,7 +103,7 @@ client.on('message', tfcm => {
     
     client.on('message', tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prefix + "unmute")){
     if (!tfcm.guild) return
     var user = tfcm.mentions.members.first();
@@ -121,7 +121,7 @@ client.on('message', tfcm => {
 
     client.on('message', tfcm => {
         let prf = db.fetch(`prefix_${tfcm.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-        if (prf === null) return prf = prefix;
+        if (prf === null) prf = prefix;
         if(tfcm.content.startsWith(prf + "tempmute")){
         var user = tfcm.mentions.members.first();
         if (!user) return tfcm.channel.send('**Mention The Member First Please!**');
@@ -217,7 +217,7 @@ client.on('message', tfcm => {
 
   client.on('message', message => {
     let prf = db.fetch(`prefix_${message.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     let moment = require("moment");//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if (message.content.startsWith(prf + 'user')) {
       var args = message.content.split(' ').slice(1);
@@ -293,7 +293,7 @@ client.on('message', tfcm => {
 
 client.on('message', message =>{
   let prf = db.fetch(`prefix_${message.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-  if (prf === null) return prf = prefix;
+  if (prf === null) prf = prefix;
   if(message.content.startsWith(prf + 'avatar')){
       let args = message.content.substring(prefix.length).split(" ");
       
@@ -344,7 +344,7 @@ client.on('message', message =>{
 
 client.on("message", tfcm => {
   let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-  if (prf === null) return prf = prefix;
+  if (prf === null) prf = prefix;
   if (tfcm.content === prf + "server") {
 
 
@@ -387,7 +387,7 @@ const manager = new GiveawaysManager(client, {
 client.giveawaysManager = manager;
 client.on('message', (message) => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     if (command === 'gcreate') {
@@ -411,7 +411,7 @@ client.on('message', (message) => {
 });
 client.on('message', (message) => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
  
@@ -428,7 +428,7 @@ client.on('message', (message) => {
  
 client.on('message', (message) => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     const command = args.shift().toLowerCase();
  
@@ -451,7 +451,7 @@ client.on('message', (message) => {
 });
 client.on('message', (message) => {
   let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     const args = message.content.slice(prf.length).trim().split(/ +/g);//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     const command = args.shift().toLowerCase();
  
@@ -472,7 +472,7 @@ client.on('message', (message) => {
 
 client.on('message', message => {
   let prf = db.fetch(`prefix_${message.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-  if (prf === null) return prf = prefix;
+  if (prf === null) prf = prefix;
   if (!message.guild) return;
   if (message.content.startsWith(prf + 'ban')) {
     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
@@ -505,7 +505,7 @@ client.on('message', message => {
 
 client.on('message', message=>{
   let prf = db.fetch(`prefix_${message.guild.id}`)
-  if (prf === null) return prf = prefix;
+  if (prf === null) prf = prefix;
   if (message.content === prf + 'rolelist') {
     const rolel = message.guild.roles.cache.map(tfcm => tfcm.toString()).join(" ");
     const embed = new Discord.MessageEmbed()
@@ -521,7 +521,7 @@ client.on('message', message=>{
 
 client.on('message', message => {
   let prf = db.fetch(`prefix_${message.guild.id}`)
-  if (prf === null) return prf = prefix;
+  if (prf === null) prf = prefix;
   if (message.content.startsWith(prf + 'vote')) {
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
   const args = message.content.split(' ').slice(1).join(' ')
@@ -543,7 +543,7 @@ client.on('message', message => {
 
 client.on('message', message =>{
   let prf = db.fetch(`prefix_${message.guild.id}`)
-  if (prf === null) return prf = prefix;
+  if (prf === null) prf = prefix;
   if(message.content === prf + "hide"){
   if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
   let everyone = message.guild.roles.cache.find(role => role.name === '@everyone');
@@ -557,7 +557,7 @@ client.on('message', message =>{
 
   client.on('message', message =>{
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
+    if (prf === null) prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if(message.content === prf + "show"){
     if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
     let everyone = message.guild.roles.cache.find(role => role.name === '@everyone');
@@ -571,7 +571,7 @@ client.on('message', message =>{
 
     client.on("message", message => {
       let prf = db.fetch(`prefix_${message.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-      if (prf === null) return prf = prefix;
+      if (prf === null) prf = prefix;
       if(!message.channel.guild) return;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
       if(message.content.startsWith(prf + `kick`)) {
       if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`**⛔ | You Dont Have The Permission To Preform This Command**`)
@@ -585,7 +585,7 @@ client.on('message', message =>{
 
     client.on('message', message =>{
       let prf = db.fetch(`prefix_${message.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-      if (prf === null) return prf = prefix;
+      if (prf === null) prf = prefix;
       if(message.content === prf + "lock"){
       if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
       let everyone = message.guild.roles.cache.find(tfcm => tfcm.name === '@everyone');
@@ -600,7 +600,7 @@ client.on('message', message =>{
 
       client.on('message', message =>{
         let prf = db.fetch(`prefix_${message.guild.id}`)
-        if (prf === null) return prf = prefix;
+        if (prf === null) prf = prefix;
         if(message.content === prf +"unlock"){
         if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**');
         let everyone = message.guild.roles.cache.find(tfcm => tfcm.name === '@everyone');
@@ -628,7 +628,7 @@ client.on('message', msg => {
 
 client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prf + "clyde")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})
@@ -646,7 +646,7 @@ client.on('message', async tfcm => {
 
 client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prf + "facepalm")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})
@@ -662,7 +662,7 @@ client.on('message', async tfcm => {
 
 client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
+    if (prf === null) prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if(tfcm.content.startsWith(prf + "wasted")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})
@@ -678,7 +678,7 @@ client.on('message', async tfcm => {
 
 client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
+    if (prf === null) prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if(tfcm.content.startsWith(prf + "hitler")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})
@@ -693,7 +693,7 @@ client.on('message', async tfcm => {
 
 client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prf + "delete")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})
@@ -707,7 +707,7 @@ client.on('message', async tfcm => {
 
   client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
+    if (prf === null) prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if(tfcm.content.startsWith(prf + "jail")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})
@@ -721,7 +721,7 @@ client.on('message', async tfcm => {
 
   client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prf + "shit")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
@@ -735,7 +735,7 @@ client.on('message', async tfcm => {
 
 client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prf + "gay")) {
       const user = tfcm.mentions.users.first() || tfcm.author; 
       const avatar = user.displayAvatarURL({format : 'png'})//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
@@ -750,8 +750,8 @@ client.on('message', async tfcm => {
 const got = require(`got`);
 client.on('message', tfcm => {//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
 let prf = db.fetch(`prefix_${tfcm.guild.id}`)
-if (prf === null) return prf = prefix;
-if (tfcm.content === prf + "meme") {
+if (prf === null) prf = prefix;
+if (tfcm.content.startsWith(prf + "meme")) {
 const embed = new Discord.MessageEmbed()
 got('https://www.reddit.com/r/memes/random/.json').then(response => {
     let content = JSON.parse(response.body);
@@ -775,7 +775,7 @@ got('https://www.reddit.com/r/memes/random/.json').then(response => {
 
 client.on('message', async tfcmandmrawan => {
     let prf = db.fetch(`prefix_${tfcmandmrawan.guild.id}`)
-    if (prf === null) return prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
+    if (prf === null) prf = prefix;//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if(tfcmandmrawan.content.startsWith(prf + "temproom")){
       if (!tfcmandmrawan.member.permissions.has("MANAGE_CHANNELS")) return tfcmandmrawan.channel.send('You dont have permissions!');
       tfcmandmrawan.delete();
@@ -804,7 +804,7 @@ client.on('message', async tfcmandmrawan => {
 
 client.on('message', async tfcm => {
     let prf = db.fetch(`prefix_${tfcm.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if(tfcm.content.startsWith(prf + "sus")) {
     const user = tfcm.mentions.users.first() || tfcm.author; 
     userimg = user.displayAvatarURL({format : 'png'}),
@@ -839,7 +839,7 @@ client.on('message', async tfcm => {
 
 client.on('message', message => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if (message.content.startsWith(prf + 'warn')) {//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if (message.content.startsWith(prf + 'warns')) return
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('**⛔ | You Dont Have The Permission To Preform This Command**')
@@ -856,7 +856,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if (message.content.startsWith(prf + 'warns')) {
     const member = message.mentions.members.first() || message.author//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     if (member.bot) return message.channel.send('**⛔ | Bots Do Not Have Warnings**')
@@ -875,7 +875,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if (message.content.startsWith(prf + 'reset-warns')) {//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
         const member = message.mentions.members.first() || message.author
         if (member.bot) return message.channel.send('**⛔ | Bots Do Not Have Warnings**')
@@ -890,7 +890,7 @@ client.on('message', message => {
 
 client.on('message', message => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
-    if (prf === null) return prf = prefix;
+    if (prf === null) prf = prefix;
     if (message.content.startsWith(prf + 'remove-credit')) {
       if (!dev.includes(message.author.id)) return message.channel.send(`**⛔ | Your Not A Dev**`)
       const member = message.mentions.members.first()
@@ -915,7 +915,7 @@ client.on('message', message => {
 
 client.on('message', message => {
   let prf = db.fetch(`prefix_${message.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-  if (prf === null) return prf = prefix;
+  if (prf === null) prf = prefix;
   if (message.content.startsWith(prf + 'add-credit')) {
     if (!dev.includes(message.author.id)) return message.channel.send(`**⛔ | Your Not A Dev**`)
     const member = message.mentions.members.first()
