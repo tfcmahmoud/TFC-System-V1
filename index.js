@@ -858,14 +858,14 @@ client.on('message', message => {
     let prf = db.fetch(`prefix_${message.guild.id}`)
     if (prf === null) prf = prefix;
     if (message.content.startsWith(prf + 'warns')) {
-    const member = message.mentions.members.first() || message.author//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
-    if (member.bot) return message.channel.send('**⛔ | Bots Do Not Have Warnings**')
-    let warns = db.fetch(`warns_${member.id}`)
+    let user = message.mentions.users.first() || client.users.cache.get(message.content.split(' ')[1])  || message.author//All Copyrights Goes To ROTNDAM 2021-2022
+    if (user.bot) return message.channel.send('**⛔ | Bots Do Not Have Warnings**')
+    let warns = db.fetch(`warns_${user.id}`)
     if (warns === null) warns = 0;
-    const embed = new Discord.MessageEmbed()//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
+    const embed = new Discord.MessageEmbed()//All Copyrights Goes To ROTNDAM 2021-2022
     .setAuthor('Warns')
     .setDescription(`
-    **${member.user.username} Warn Count:**
+    **${user.username} Warn Count:**
     \`${warns}\`
     `)
     .setColor(`RED`)
