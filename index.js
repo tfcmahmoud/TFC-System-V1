@@ -1042,13 +1042,13 @@ client.on('message', message => {
           let money1 = db.fetch(`money_${message.author.id}`)
           if (money1 === null) money1 = 0;
           console.log(chalk.green(`${message.author.username} has $${money1}`))
-          return message.channel.send(`**:bank: |  ${message.author.username}, your account balance is \`$${money1}\`.**`)
+          return message.channel.send(`:bank: |**  ${message.author.username}, your account balance is \`$${money1}\`.**`)
         }
         if (message.author.id === user.id) {
           let money1 = db.fetch(`money_${message.author.id}`)
           if (money1 === null) money1 = 0;
           console.log(chalk.green(`${message.author.username} has $${money1}`))
-          return message.channel.send(`**:bank: |  ${message.author.username}, your account balance is \`$${money1}\`.**`)
+          return message.channel.send(`:bank: |**  ${message.author.username}, your account balance is \`$${money1}\`.**`)
           }
         let money = db.fetch(`money_${user.id}`) //All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
         if (money === null) money = 0;
