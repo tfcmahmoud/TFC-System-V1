@@ -162,7 +162,7 @@ client.on('message', message => {
 .setColor('#ff00ec')//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
 .setDescription(`
 _**General✨**_
-\`${prf}bal\`/\`${prf}credit\` , \`${prf}give\` , \`${prf}daily\` , \`${prf}package\` , \`${prf}rolelist\` , \`${prf}server\` , \`${prf}avatar\`, \`user\`
+\`${prf}bal\`/\`${prf}credit\` , \`${prf}give\` , \`${prf}daily\` , \`${prf}package\` , \`${prf}rolelist\` , \`${prf}server\` , \`${prf}avatar\`, \`${prf}user\`
 
 _**Fun😂**_
 \`${prf}sus\` , \`${prf}meme\` , \`${prf}gay\` , \`${prf}delete\` , \`${prf}shit\`, \`${prf}jail\` , \`${prf}hitler\` , \`${prf}wasted\` , \`${prf}facepalm\` , \`${prf}clyde\`
@@ -170,7 +170,7 @@ _**Fun😂**_
 _**Mods💻**_
 \`${prf}ban\` , \`${prf}kick\` , \`${prf}lock\` , \`${prf}unlock\` , \`${prf}hide\` , \`${prf}show\` , \`${prf}warn\` , \`${prf}warns\` , \`${prf}mute\` , \`${prf}unmute\` ,
 \`${prf}tempmute\` , \`${prf}vote\` , \`${prf}set-prefix\` , \`${prf}set-welcome\` , \`${prf}remove-welcome\` , \`${prf}set-autorole\` , \`${prf}remove-autorole\` , \`${prf}temproom\` , \`${prf}say\` , \`${prf}reset-warns\` , 
-\`${prf}set-autogif\` , \`${prf}remove-autogif\`
+\`${prf}set-autogif\` , \`${prf}remove-autogif\` , \`${prf}clear\`
 
 _**Giveaways🎉**_
 \`${prf}gcreate\` , \`${prf}greroll\`, \`${prf}gdelete\`
@@ -181,6 +181,39 @@ _**Dev🤖**_
 message.channel.send(embed)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
     }
 })//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
+
+client.on('message', tfcm => {
+    let prf = db.fetch(`prefix_${tfcm.guild.id}`)
+    if(prf === null) prf = prefix;
+    if(tfcm.content.startsWith(prf + `clear`)) {
+     const messageArray = tfcm.content.split(' ');
+     const args = messageArray.slice(1);
+      if(!tfcm.channel.guild) return;
+   
+       if (!tfcm.member.permissions.has("MANAGE_MESSAGES")) return tfcm.channel.send('***You Dont Have The Permission `MANAGE_MESSAGES` !***');
+   
+      if (!args[0]) {
+           tfcm.channel.bulkDelete(100, true);
+           return tfcm.channel.send(`\`\`\`js\n 100 messages has been deleted.\n\`\`\``).then(tfcm => { tfcm.delete({timeout: 3000})})
+       }
+   
+       let deleteAmount; //Code By TFC Mahmoud
+   
+       if (isNaN(args[0])) { return tfcm.channel.send(`\`\`\`js\n Please Put A Number Only!\n\`\`\``).then(tfcm => { tfcm.delete({timeout: 3000})}) }
+   
+       if (parseInt(args[0]) > 100) {
+           return tfcm.channel.send('\`\`\`js\n Hey, I Cant Do That. I Only Can Delete 100 Messages At A Time!\n\`\`\`').then(tfcm => { tfcm.delete({timeout: 3000})})
+       } else {
+           deleteAmount = parseInt(args[0]);
+       } // Clear Code V12 By TFC Mahmoud
+       if (parseInt(args[0]) == 1) {
+           tfcm.channel.bulkDelete(deleteAmount, true);
+           return tfcm.channel.send(`\`\`\`js\n ${deleteAmount} message has been deleted.\n\`\`\``).then(tfcm => { tfcm.delete({timeout: 3000})})
+       }
+   
+       tfcm.channel.bulkDelete(deleteAmount, true);
+       tfcm.channel.send(`\`\`\`js\n ${deleteAmount} messages has been deleted.\n\`\`\``).then(tfcm => { tfcm.delete({timeout: 3000})})}
+      });
 
   client.on('message', message => {
     let prf = db.fetch(`prefix_${message.guild.id}`)//All Copyrights Goes To TFC Mahmoud And Ottawa Codes 2021-2022
