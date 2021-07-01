@@ -60,4 +60,4 @@ remove-autorole
 
 [Discord Server](https://discord.gg/pRQ77qB2bB)
 
-My Discord : TFC Mahmoud#4606
+My Discord : TFC Mahmoud#2021
